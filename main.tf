@@ -11,14 +11,14 @@ terraform {
 
 provider "aws" {
   profile = "DevAdmin"
-  region  = "ap-southeast-2"
+  region  = "ap-southeast-1"
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0d058fe428540cd89"
+  ami           = "ami-055147723b7bca09a"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "aws_ec2_example"
+    Name = var.instance_name
   }
 }
